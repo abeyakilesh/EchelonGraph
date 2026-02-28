@@ -5,6 +5,7 @@ export default function InvoiceVerification({ onCompanyClick }) {
     const [invoices, setInvoices] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedInvoice, setSelectedInvoice] = useState(null);
+    const [isFundingBlocked, setIsFundingBlocked] = useState(false);
 
     useEffect(() => {
         loadInvoices();
@@ -26,6 +27,7 @@ export default function InvoiceVerification({ onCompanyClick }) {
         try {
             const res = await verifyInvoice(id);
             setSelectedInvoice(res.data);
+            setIsFundingBlocked(false); // Reset block state when opening new invoice
         } catch (e) {
             console.error(e);
         }
@@ -222,7 +224,21 @@ export default function InvoiceVerification({ onCompanyClick }) {
                                             Risk Score: {selectedInvoice.phantom_risk_score}/100
                                         </div>
                                     </div>
-                                    {selectedInvoice.is_phantom && <button className="btn btn-primary" style={{ background: 'var(--risk-critical)', color: '#fff', border: 'none' }}>Block Funding</button>}
+                                    {selectedInvoice.is_phantom && (
+                                        <button
+                                            className="btn btn-primary"
+                                            style={{
+                                                background: isFundingBlocked ? 'var(--bg-card)' : 'var(--risk-critical)',
+                                                color: isFundingBlocked ? 'var(--text-muted)' : '#fff',
+                                                border: isFundingBlocked ? '1px solid var(--border)' : 'none',
+                                                cursor: isFundingBlocked ? 'not-allowed' : 'pointer'
+                                            }}
+                                            onClick={() => setIsFundingBlocked(true)}
+                                            disabled={isFundingBlocked}
+                                        >
+                                            {isFundingBlocked ? "Funding Blocked ✓" : "Block Funding"}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
 
