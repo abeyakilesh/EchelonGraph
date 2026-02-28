@@ -2,6 +2,19 @@
 
 EchelonGraph is an enterprise-grade web application designed to detect complex fraud patterns in supply chain finance. It utilizes Graph Neural Networks (GNNs), circular transaction detection, shell clusters analysis, and real-time phantom invoice tracking using Neo4j and a FastAPI backend.
 
+## Images
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/4611abaa-0f43-4c42-9885-09f0144c0d44" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/56c73170-0e73-4c50-bb7a-35d6b788a37f" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/4abeac5d-ced0-40eb-8616-d5100cf90faa" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/e8382a2a-12a8-49fd-a3fe-0a84a6e349c6" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/46584c70-206b-47e7-a52c-3a830a6a8745" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/6f1fa3bb-01a4-40c9-a258-15e68efbb0f8" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/15671db2-a838-4d55-b9c3-d769a5e268f0" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/6b389d36-0705-4b77-bc38-74b6db7478bc" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/cf27da35-312b-4c55-9b1d-73647dc27be4" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/27a1d78b-5511-42fc-a60b-fccc166724c0" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/cb14c688-25f6-474e-8c51-8aa682fd9f28" />
+
 ## The Problem: Multi-Tier Supply Chain Fraud
 In multi-tier supply chain finance (Tier 1 → Tier 2 → Tier 3), a Tier 1 supplier can fabricate phantom invoices. Each invoice might look legitimate individually, but cross-tier cascading triggers repeated financing, multiplying exposure. **Traditional invoice checks fail** because the fraud becomes visible only through network-level correlation.
 
