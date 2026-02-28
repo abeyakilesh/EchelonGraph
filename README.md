@@ -3,7 +3,7 @@
 EchelonGraph is an enterprise-grade web application designed to detect complex fraud patterns in supply chain finance. It utilizes Graph Neural Networks (GNNs), circular transaction detection, shell clusters analysis, and real-time phantom invoice tracking using Neo4j and a FastAPI backend.
 
 ## Architecture
-- **Frontend:** React + Vite (Minimalist Enterprise Design System)
+- **Frontend:** React + Vite 
 - **Backend:** FastAPI (Python 3.11)
 - **Graph Database:** Neo4j (Enterprise features: APOC + Graph Data Science)
 - **Relational Database:** PostgreSQL (for Auth & Audit Trails)
