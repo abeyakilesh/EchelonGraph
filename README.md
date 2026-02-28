@@ -30,12 +30,19 @@ EchelonGraph solves this problem uniquely through **Graph AI and Topological Map
 
 ---
 
-##  How to Run the Project Locally
+## 🚀 Quick Start & Setup Guide
 
-There are two main ways to run this project: **Using Docker (Recommended)** or **Manual Setup**.
+### Method 1: The Quick Way (Using Admin Login)
+*(If the application is already running or deployed)*
+1. Open the application at `http://localhost:3000`
+2. **Click "Admin"**: On the login screen, click the **Admin** Quick Access button so the details are filled automatically. 
+3. You can now login and view all enterprise features!
+4. **Generate Data**: Click **Run Pipeline** (bottom left) to build the graph, then go to **Invoice Verification** and click **Generate Samples**.
 
-### Method 1: The Quick Way (Using Docker Compose)
-*This is the recommended method as it automatically provisions the Neo4j Graph Database (with the required GDS machine learning plugins) and the PostgreSQL database.*
+---
+
+### Method 2: The Quick Way (Using Docker Compose)
+*This is the recommended method for initial local setup as it automatically provisions the Neo4j Graph Database (with the required GDS machine learning plugins) and the PostgreSQL database.*
 
 **Prerequisites:** You must have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running on your system.
 
@@ -46,13 +53,13 @@ There are two main ways to run this project: **Using Docker (Recommended)** or *
    docker-compose up --build
    ```
 4. **Access the application:**
-   - Frontend Dashboard: `http://localhost:3000`
+   - Frontend Dashboard: `http://localhost:3000` (Use **Method 1** above to log in!)
    - Backend API Docs: `http://localhost:8000/docs`
    - Neo4j Database Browser: `http://localhost:7474` (User: `neo4j`, Pass: `echelon_secret`)
 
 ---
 
-### Method 2: Manual Setup (Without Docker)
+### Method 3: Manual Setup (Without Docker)
 *If you cannot run Docker, you can run the services manually, but you still need local instances of Neo4j and PostgreSQL running.*
 
 **Prerequisites:** 
@@ -70,43 +77,12 @@ There are two main ways to run this project: **Using Docker (Recommended)** or *
    ```bash
    cd backend
    ```
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Start the backend server:
-   ```bash
-   uvicorn main:app --reload --host 0.0.0.0 --port 8000
-   ```
+2. Create and activate a virtual environment (`python -m venv venv`, then `source venv/bin/activate`).
+3. Install dependencies (`pip install -r requirements.txt`).
+4. Start the server (`uvicorn main:app --reload --host 0.0.0.0 --port 8000`).
 
 #### Step 3: Start the React Frontend
-1. Open a **new** terminal window and navigate to the `frontend` folder:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-4. Your application will be available at `http://localhost:3000`.
-
----
-
-## Generating Data & Using the App
-
-Because the EchelonGraph databases start empty, you need to populate them with a synthetic supply chain network to test the analytics.
-
-1. Open `http://localhost:3000`.
-2. **Log In:** On the login screen, click the **"Admin"** Quick Access button (or use `admin` / `echelon123` ) to log in with full privileges.
-3. Look at the bottom-left corner of the sidebar and click the blue **Run Pipeline** button. Wait 4-5 seconds for the engine to build the graph, train the GNNs, and calculate risk scores.
-4. Navigate to the **Invoice Verification** tab and click **Generate Samples** to populate the Neo4j system with multi-tier duplicated and phantom invoices.
-5. Explore the Investigation Workspace, Heatmaps, and Shell Cluster detection screens!
+1. Open a new terminal window and navigate to the `frontend` folder (`cd frontend`).
+2. Install dependencies (`npm install`).
+3. Start the UI (`npm run dev`).
+4. Your application will be available at `http://localhost:3000`. Use **Method 1** above to log in!
