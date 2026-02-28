@@ -10,7 +10,7 @@ EchelonGraph is an enterprise-grade web application designed to detect complex f
 
 ---
 
-## 🚀 How to Run the Project Locally
+##  How to Run the Project Locally
 
 There are two main ways to run this project: **Using Docker (Recommended)** or **Manual Setup**.
 
@@ -81,7 +81,7 @@ There are two main ways to run this project: **Using Docker (Recommended)** or *
 
 ---
 
-## 🧠 Generating Data & Using the App
+##  Generating Data & Using the App
 
 Because the EchelonGraph databases start empty, you need to populate them with a synthetic supply chain network to test the analytics.
 
