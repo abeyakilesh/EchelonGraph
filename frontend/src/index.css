@@ -123,11 +123,11 @@ body {
 }
 
 .login-card {
-  width: 440px;
+  width: 520px;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 48px 40px;
+  padding: 56px 48px;
   position: relative;
   z-index: 1;
   box-shadow: var(--shadow-lg);
