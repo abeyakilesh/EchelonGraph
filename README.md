@@ -2,6 +2,26 @@
 
 EchelonGraph is an enterprise-grade web application designed to detect complex fraud patterns in supply chain finance. It utilizes Graph Neural Networks (GNNs), circular transaction detection, shell clusters analysis, and real-time phantom invoice tracking using Neo4j and a FastAPI backend.
 
+## ⚠️ The Problem: Multi-Tier Supply Chain Fraud
+In multi-tier supply chain finance (Tier 1 → Tier 2 → Tier 3), a Tier 1 supplier can fabricate phantom invoices. Each invoice might look legitimate individually, but cross-tier cascading triggers repeated financing, multiplying exposure. **Traditional invoice checks fail** because the fraud becomes visible only through network-level correlation.
+
+## 🎯 The Expected Outcome
+To solve this, we needed to build a real-time SCF fraud detection system that:
+1. Validates invoices against Purchase Orders (PO) and Goods Receipt Notes (GRN).
+2. Maps the buyer-supplier network topology.
+3. Detects duplicate invoices across lenders using cryptographic invoice fingerprints.
+4. Uses graph feasibility metrics to flag phantom invoices and provides pre-disbursement early warnings.
+
+## 🧠 Why Our Solution Works (The EchelonGraph Advantage)
+EchelonGraph solves this problem uniquely through **Graph AI and Topological Mapping rather than isolated rule sets:**
+
+1. **Network-Level Visibility:** Instead of looking at invoices in a tabular format, we ingest every company, invoice, and document into a **Neo4j Graph Database**. By mapping the relationships as edges (`(Company)-[:ISSUED]->(Invoice)-[:VALIDATES]-(PO)`), we can instantly traverse multi-tier dependencies.
+2. **Cryptographic Fingerprinting:** We hash incoming invoice parameters. If a Tier 1 supplier attempts to pledge the exact same invoice to Lender A and Lender B, the system calculates the identical hash and instantly flags the collision across the entire network—preventing multi-pledging.
+3. **Graph Neural Networks (GNNs):** We don't just use standard rules; we run PageRank and Louvain community detection algorithms on the network. This allows us to detect dense clusters of shell companies and identify circular money flow loops (e.g., A → B → C → A) that are moving fake money to artificially inflate revenue.
+4. **Phantom AI Detection:** By combining the topological risk score with missing document flags (Missing PO/GRN), we generate a real-time "Phantom Risk Score" that visually blocks disbursements before the money leaves the bank.
+
+---
+
 ## Architecture
 - **Frontend:** React + Vite (Minimalist Enterprise Design System)
 - **Backend:** FastAPI (Python 3.11)
