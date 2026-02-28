@@ -101,11 +101,12 @@ There are two main ways to run this project: **Using Docker (Recommended)** or *
 
 ---
 
-##  Generating Data & Using the App
+## Generating Data & Using the App
 
 Because the EchelonGraph databases start empty, you need to populate them with a synthetic supply chain network to test the analytics.
 
-1. Open `http://localhost:3000` and login with the default Admin credentials.
-2. Look at the bottom-left corner of the sidebar and click the blue **Run Pipeline** button. Wait 4-5 seconds for the engine to build the graph, train the GNNs, and calculate risk scores.
-3. Navigate to the **Invoice Verification** tab and click **Generate Samples** to populate the Neo4j system with multi-tier duplicated and phantom invoices.
-4. Explore the Investigation Workspace, Heatmaps, and Shell Cluster detection screens!
+1. Open `http://localhost:3000`.
+2. **Log In:** On the login screen, click the **"Admin"** Quick Access button (or use `admin` / `echelon123` ) to log in with full privileges.
+3. Look at the bottom-left corner of the sidebar and click the blue **Run Pipeline** button. Wait 4-5 seconds for the engine to build the graph, train the GNNs, and calculate risk scores.
+4. Navigate to the **Invoice Verification** tab and click **Generate Samples** to populate the Neo4j system with multi-tier duplicated and phantom invoices.
+5. Explore the Investigation Workspace, Heatmaps, and Shell Cluster detection screens!
