@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { login } from '../api';
+import ParticleNetwork from './ParticleNetwork';
 
 export default function LoginPage({ onLogin }) {
     const [username, setUsername] = useState('');
@@ -29,7 +30,7 @@ export default function LoginPage({ onLogin }) {
 
     return (
         <div className="login-page">
-            <div className="login-bg" />
+            <ParticleNetwork />
             <div className="login-card">
                 <div className="login-header">
                     <div className="login-logo">E</div>
