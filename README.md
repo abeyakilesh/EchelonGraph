@@ -1,4 +1,4 @@
-# EchelonGraph: Multi-Tier Supply Chain Fraud Intelligence
+# EchelonGraph: Multi-Tier Supply Chain Fraud Intelligence 
 
 EchelonGraph is an enterprise-grade web application designed to detect complex fraud patterns in supply chain finance. It utilizes Graph Neural Networks (GNNs), circular transaction detection, shell clusters analysis, and real-time phantom invoice tracking using Neo4j and a FastAPI backend.
 
