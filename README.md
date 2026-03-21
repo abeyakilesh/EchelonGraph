@@ -36,7 +36,7 @@ EchelonGraph solves this problem uniquely through **Graph AI and Topological Map
 ---
 
 ## Architecture
-- **Frontend:** React + Vite (Minimalist Enterprise Design System)
+- **Frontend:** React + Vite 
 - **Backend:** FastAPI (Python 3.11)
 - **Graph Database:** Neo4j (Enterprise features: APOC + Graph Data Science)
 - **Relational Database:** PostgreSQL (for Auth & Audit Trails)
