@@ -19,7 +19,7 @@ async def lifespan(app: FastAPI):
         neo4j_client.create_constraints()
         logger.info(" Neo4j connected")
     except Exception as e:
-        logger.warning(f"⚠️  Neo4j not available: {e}")
+        logger.warning(f" Neo4j not available: {e}")
     yield
     try:
         neo4j_client.close()
